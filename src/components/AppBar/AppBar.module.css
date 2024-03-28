@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 150ms ease-in-out;
+}
+
+.link {
+  color: blue;
+  font-size: 22px;
+}
+
+.active {
+  color: orangered;
+  text-decoration: underline;
+}
