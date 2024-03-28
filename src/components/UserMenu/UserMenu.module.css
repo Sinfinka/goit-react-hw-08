@@ -1,0 +1,9 @@
+.link {
+  color: blue;
+  font-size: 22px;
+}
+
+.active {
+  color: orangered;
+  text-decoration: underline;
+}

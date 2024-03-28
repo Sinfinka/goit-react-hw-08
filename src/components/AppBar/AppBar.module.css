@@ -7,6 +7,8 @@
 
 .nav {
   display: flex;
+  align-items: baseline;
+  text-align: center;
   gap: 16px;
 }
 
@@ -23,5 +25,5 @@
 
 .active {
   color: orangered;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
