@@ -1,32 +1,34 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import ContactForm from "../contactForm/ContactForm";
-import ContactList from "../contactList/ContactList";
+// import ContactList from "../contactList/ContactList";
 import SearchBox from "../searchBox/SearchBox";
 import css from "./App.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "../../redux/contacts/operations";
+import {  useSelector } from "react-redux"; //useDispatch,
+// import { fetchContacts } from "../../redux/contacts/operations";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
-
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import toast, { Toaster } from "react-hot-toast";
+import{ Toaster } from "react-hot-toast"; // toast,  snaryji
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "../../pages/NotFoundPage";
 import Navigation from "../AppBar/AppBar";
 import Footer from "../Footer/Footer";
+import Register from "../../pages/Register";
+import Login from "../../pages/Login";
+
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(fetchContacts())
-      .unwrap()
-      .catch(() => {
-        toast.error("Fetch rejected");
-      });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts())
+  //     .unwrap()
+  //     .catch(() => {
+  //       toast.error("Fetch rejected");
+  //     });
+  // }, [dispatch]);
 
   return (
     <div className={css.conteiner}>
@@ -38,8 +40,8 @@ function App() {
 
 <Routes>
   <Route path="/" element={<h1>Home Page</h1>}/>
-  <Route path="/register" element={<h1>Register Page</h1>}/>
-  <Route path="/login" element={<h1>Login Page</h1>}/>
+  <Route path="/register" element={<Register/>}/>
+  <Route path="/login" element={<Login/>}/>
   <Route path="/contacts" element={<h1>Contacts Page</h1>}/>
   <Route path="*" element={<NotFoundPage/>}/>
 </Routes>
@@ -51,7 +53,7 @@ function App() {
       </div>
       <div className={css.contacts}>
         <SearchBox />
-        <ContactList />
+        {/* <ContactList /> */}
         {loading && !error && <Loader />}
         {error && <ErrorMessage />}
         <Toaster />
