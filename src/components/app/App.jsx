@@ -1,7 +1,5 @@
 // import { useEffect } from "react";
-import ContactForm from "../contactForm/ContactForm";
-// import ContactList from "../contactList/ContactList";
-import SearchBox from "../searchBox/SearchBox";
+
 import css from "./App.module.css";
 import {  useSelector } from "react-redux"; //useDispatch,
 // import { fetchContacts } from "../../redux/contacts/operations";
@@ -13,8 +11,10 @@ import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "../../pages/NotFoundPage";
 import Navigation from "../AppBar/AppBar";
 import Footer from "../Footer/Footer";
-import Register from "../../pages/Register";
-import Login from "../../pages/Login";
+import RegisterPage from "../../pages/Register";
+import LoginPage from "../../pages/Login";
+import HomePage from "../../pages/Home";
+import ContactsPage from "../../pages/Contacts";
 
 
 function App() {
@@ -32,28 +32,15 @@ function App() {
 
   return (
     <div className={css.conteiner}>
-
       <Navigation/>
-
-
-
-
-<Routes>
-  <Route path="/" element={<h1>Home Page</h1>}/>
-  <Route path="/register" element={<Register/>}/>
-  <Route path="/login" element={<Login/>}/>
-  <Route path="/contacts" element={<h1>Contacts Page</h1>}/>
-  <Route path="*" element={<NotFoundPage/>}/>
-</Routes>
-
-
-      <div className={css.header}>
-        <h3>Phonebook</h3>
-        <ContactForm />
-      </div>
-      <div className={css.contacts}>
-        <SearchBox />
-        {/* <ContactList /> */}
+            <Routes>
+              <Route path="/" element={<HomePage/>}/>
+              <Route path="/register" element={<RegisterPage/>}/>
+              <Route path="/login" element={<LoginPage/>}/>
+              <Route path="/contacts" element={<ContactsPage/>}/>
+              <Route path="*" element={<NotFoundPage/>}/>
+            </Routes>
+         <div className={css.contacts}>
         {loading && !error && <Loader />}
         {error && <ErrorMessage />}
         <Toaster />

@@ -11,11 +11,10 @@ export default function Contact({ contact }) {
   const handleDelete = () => {
     dispatch(deleteContact(contact.id)).unwrap()
     .then((value) => {
-      console.log(value);
       toast.success(`Contact ${value.name} was deleted`);
     })
-    .catch(() => {
-      toast.error("Contact was not deleted");
+    .catch((value) => {
+      toast.error(`Contact ${value.name} was not deleted`);
     });
   };
 
