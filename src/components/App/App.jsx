@@ -31,7 +31,7 @@ function App() {
   // }, [dispatch]);
 
   return (
-    <div className={css.conteiner}>
+    <div className={css.container}>
       <Navigation/>
             <Routes>
               <Route path="/" element={<HomePage/>}/>
