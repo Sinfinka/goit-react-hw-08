@@ -7,7 +7,6 @@ const setAuthHeader = (token) => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
 
-
   const clearAuthHeader = () => {
     axios.defaults.headers.common["Authorization"] = "";
   };
@@ -49,5 +48,25 @@ export const register = createAsyncThunk(
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
+    }
+  )
+
+
+  export const refreshUser = createAsyncThunk(
+    "auth/refresh",
+    async (_, thunkAPI) => {
+const {auth: {token},} = thunkAPI.getState();
+//the same => const reduxState = thunkAPI.getState();
+    // const savedToken = reduxState.auth.token;
+    setAuthHeader(token); //<=savedToken
+    const response = await axios.get("/users/current");
+    return response.data;
+    }, 
+    {
+      condition: (_, { getState }) => {
+        const reduxState = getState();
+        const savedToken = reduxState.auth.token;
+        return savedToken !== null;
+      },
     }
   )
