@@ -20,8 +20,6 @@ const Navigation = ()=>{
 {isLoggedIn && <NavLink className={addActiveClass} to="/contacts">
         Contacts
         </NavLink>}
-       
-    
         </>
     )
     
