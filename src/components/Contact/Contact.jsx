@@ -1,13 +1,14 @@
-import { deleteContact, editContact } from "../../redux/contacts/operations";
+import {  editContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiUser } from "react-icons/hi";
 import CloseIcon from '@mui/icons-material/Close';
 import DoneIcon from '@mui/icons-material/Done';
 import EditIcon from '@mui/icons-material/Edit';
 import css from "./Contact.module.css";
+import DeleteModal from "../DeleteModal/DeleteModal";
+
 
 
 
@@ -17,18 +18,16 @@ export default function Contact({ contact }) {
   const dispatch = useDispatch();
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   // const [contactId, setContactId] = useState(contact.id);
-
  
+  const handleOpenModal = () => {
+    setModalIsOpen(true)
+  };
 
-  const handleDelete = () => {
-    dispatch(deleteContact(contact.id)).unwrap()
-    .then((value) => {
-      toast.success(`Contact ${value.name} was deleted`);
-    })
-    .catch((value) => {
-      toast.error(`Contact ${value.name} was not deleted`);
-    });
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
   };
 
   const handleEdit = ()=>{
@@ -38,8 +37,6 @@ export default function Contact({ contact }) {
   const handleClose = ()=>{
     setIsEditing(false)
    }
-
-
 
    const handleSave = () => {
       const updatedContact = {
@@ -65,8 +62,6 @@ export default function Contact({ contact }) {
     <>
     <div className={css.avatar}>{firstLetter}</div>
 
-
-
     {isEditing ?<input type="text" value={name} onChange={handleSetName}/> :<div className={css.wrapper}>
       <HiUser />
       <div> {contact.name} </div>
@@ -81,11 +76,13 @@ export default function Contact({ contact }) {
     }
     {isEditing ? <DoneIcon onClick={handleSave}/>  : <EditIcon onClick={handleEdit}/>} <CloseIcon onClick={handleClose}/>
       
-    <button className={css.btn} onClick={handleDelete}>
+    <button className={css.btn} onClick={handleOpenModal}>
       Delete
     </button>
 
-  
+    <DeleteModal contact={contact} modalIsOpen={modalIsOpen} onCloseModal={handleCloseModal} />
     </>
   );
 }
+
+
