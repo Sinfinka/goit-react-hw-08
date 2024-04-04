@@ -15,7 +15,7 @@ export default function ContactList() {
       {contacts.map((contact) => {
         return (
           <li className={css.contactItem} key={contact.id}>
-            <Contact contact={contact} />
+           <Contact contact={contact} />
           </li>
         );
       })}

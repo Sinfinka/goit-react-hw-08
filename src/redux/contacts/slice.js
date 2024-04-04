@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, deleteContact, addContact } from "./operations";
+import { fetchContacts, deleteContact, addContact, editContact } from "./operations";
 import { logOut } from "../auth/operations";
 
 
@@ -51,11 +51,24 @@ const slice = createSlice({
         state.items = [];
         state.loading = false;
         state.error = null;
+      }).addCase(editContact.pending, (state) => {
+        state.error = false;
+        state.loading = true;
+      })
+      .addCase(editContact.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = state.items.map(item => {
+          if (item.id === action.payload.id) {
+            item = action.payload;
+          }
+          return item;
+        });
+      })
+      .addCase(editContact.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
   },
 });
 
 export default slice.reducer;
-
-
-
