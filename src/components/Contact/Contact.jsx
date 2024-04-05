@@ -1,4 +1,4 @@
-import {  editContact } from "../../redux/contacts/operations";
+import { editContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -9,80 +9,122 @@ import EditIcon from '@mui/icons-material/Edit';
 import css from "./Contact.module.css";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-
-
-
-
 export default function Contact({ contact }) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [contactId, setContactId] = useState(contact.id);
- 
-  const handleOpenModal = () => {
-    setModalIsOpen(true)
-  };
 
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
 
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
 
-  const handleEdit = ()=>{
-   setIsEditing(true)
-  }
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
 
-  const handleClose = ()=>{
-    setIsEditing(false)
-   }
+  const handleClose = () => {
+    setIsEditing(false);
+    setName(contact.name);
+    setNumber(contact.number);
+  };
 
-   const handleSave = () => {
-      const updatedContact = {
+  const handleSave = () => {
+    const updatedContact = {
       name: name,
       number: number
     };
-    dispatch(editContact({ contactId: contact.id , updatedContact }));
+    dispatch(editContact({ contactId: contact.id, updatedContact }));
     setIsEditing(false);
   };
 
-   const handleSetName = (e) => {
-    setName(e.target.value)
-  }
-
-  const handleSetNumber = (e) => {
-    setNumber(e.target.value)
+  const handleSetName = (e) => {
+    if (e.key === "Enter") {
+      handleSave();
+    } else {
+      setName(e.target.value);
+    }
   };
 
+  const handleSetNumber = (e) => {
+    if (e.key === "Enter") {
+      handleSave();
+    } else {
+      setNumber(e.target.value);
+    }
+  };
 
-   const firstLetter = contact.name.charAt(0).toUpperCase(); 
- 
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
+      handleClose();
+    }
+    if (e.key === "Enter") {
+      handleSave();
+    }
+  };
+
+  const firstLetter = contact.name.charAt(0).toUpperCase();
+
   return (
     <>
-    <div className={css.avatar}>{firstLetter}</div>
+      <div className={css.avatar}>{firstLetter}</div>
 
-    {isEditing ?<input type="text" value={name} onChange={handleSetName}/> :<div className={css.wrapper}>
-      <HiUser />
-      <div> {contact.name} </div>
-    </div> }
+      {isEditing ? (
+        <input
+          type="text"
+          value={name}
+          onChange={handleSetName}
+          onKeyDown={handleKeyDown}
+          autoFocus 
+        />
+      ) : (
+        <div className={css.wrapper}>
+          <HiUser />
+          <div> {contact.name} </div>
+        </div>
+      )}
 
-    {isEditing ?
-      <input type="text" value={number} onChange={handleSetNumber}/> :
-      <div className={css.wrapper}>
-        <FaPhoneAlt />
-        <div> {contact.number} </div>
-      </div>
-    }
-    {isEditing ? <DoneIcon onClick={handleSave}/>  : <EditIcon onClick={handleEdit}/>} <CloseIcon onClick={handleClose}/>
-      
-    <button className={css.btn} onClick={handleOpenModal}>
-      Delete
-    </button>
+      {isEditing ? (
+        <input
+          type="text"
+          value={number}
+          onChange={handleSetNumber}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSave();
+            }
+          }}
+        />
+      ) : (
+        <div className={css.wrapper}>
+          <FaPhoneAlt />
+          <div> {contact.number} </div>
+        </div>
+      )}
 
-    <DeleteModal contact={contact} modalIsOpen={modalIsOpen} onCloseModal={handleCloseModal} />
+      {isEditing ? (
+        <div>
+          <DoneIcon onClick={handleSave} />
+          <CloseIcon onClick={handleClose} />
+        </div>
+      ) : (
+        <EditIcon onClick={handleEdit} />
+      )}
+
+      <button className={css.btn} onClick={handleOpenModal}>
+        Delete
+      </button>
+
+      <DeleteModal
+        contact={contact}
+        modalIsOpen={modalIsOpen}
+        onCloseModal={handleCloseModal}
+      />
     </>
   );
 }
-
-
