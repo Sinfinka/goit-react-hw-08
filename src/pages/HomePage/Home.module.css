@@ -1,0 +1,31 @@
+.title {
+    background-color: var(--middle-green-color);
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.text {
+    background-color: var(--middle-green-color);
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 4px;
+    margin-bottom: 12px;
+}
+
+
+.btn {
+    background-color: var(--background-transparent-color);
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 8px 16px;
+    transition: background-color 250ms ease-in; 
+    }
+
+    .btn:hover {
+        background-color: var(--middle-green-color);
+      }
+      

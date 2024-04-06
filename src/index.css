@@ -19,8 +19,9 @@
   --background-color: #f9f6ed;
   --background-transparent-color: rgba(249, 246, 237, 0.5);
   --light-green-color:#cdd4b6 ;
-  --middle-green-color: #c6d0ad;
-  --green-color: #b4c297;
+  --middle-green-color: #c6d0ada7;
+  --green-color: #7d8e5b;
+  --black-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,14 +46,14 @@ body {
   background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Мінімальна висота боді на всю висоту видимого вікна браузера */
+    min-height: 100vh; 
   }
   
   main {
 
-    flex: 1; /* Основний контент займає залишок доступного місця */
+    flex: 1; 
   }
   
   footer {
-    margin-top: auto; /* Футер вибивається вниз відносно основного контенту */
+    margin-top: auto; 
   }

@@ -7,11 +7,14 @@ const UserMenu = ()=>{
    const dispatch = useDispatch();
    const userName = useSelector(selectUser)
 
+   const firstUserLetter = userName.name.charAt(0).toUpperCase();
+
    const handleLogout = () => {
       dispatch(logOut())}
 return(   <div className={css.userMenu}>
-<p>Welcome, {userName.name}!</p>
-<button onClick={handleLogout}>Logout</button>
+    <div className={css.avatar}>{firstUserLetter}</div>
+<p className={css.userName}> Welcome, {userName.name}!</p>
+<button className={css.btn} onClick={handleLogout}>Logout</button>
    </div>)
 }
 

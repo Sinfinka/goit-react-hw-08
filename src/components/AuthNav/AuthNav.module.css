@@ -1,9 +1,15 @@
 .link {
-  color: blue;
-  font-size: 22px;
+  color: var(--black-color);
+  font-size: 16px; 
+  padding-left: 8px;
+  transition: color 250ms ease-in; 
 }
 
 .active {
-  color: orangered;
+text-shadow: 2px 2px 2px var(--green-color);
   text-decoration: underline;
+}
+
+.link:hover{
+  color: var(--green-color);
 }

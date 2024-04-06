@@ -16,12 +16,12 @@ const AppBar = () => {
     <header className={css.header}>
       <div className={css.logo}>
         <Link to="/" className={css.logo}>
-         <AnimatedIcon/> <span>PHONE</span> BOOK
+         <AnimatedIcon/> PHONE <span className={css.book}>BOOK</span>
         </Link>
       </div>
       <nav className={css.nav}>
         <Navigation/>  
-        {!isRefreshing && <div>{isLoggedIn ? <UserMenu /> : <AuthNav />}</div>}     
+        {!isRefreshing && <>{isLoggedIn ? <UserMenu /> : <AuthNav />}</>}     
       </nav>
     </header>
   );

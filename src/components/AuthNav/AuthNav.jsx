@@ -8,7 +8,7 @@ const addActiveClass = ({ isActive }) => {
   };
 
 const AuthNav = ()=>{
-return(   <div>
+return(   <div className={css.logreg}>
     <NavLink className={addActiveClass} to="/login">
       Login
     </NavLink>

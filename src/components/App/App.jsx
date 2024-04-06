@@ -15,7 +15,7 @@ import { refreshUser } from "../../redux/auth/operations";
 import css from "./App.module.css";
 import PrivateRoute from "../PrivateRoute";
 
-const HomePage = lazy(() =>import("../../pages/Home"))
+const HomePage = lazy(() =>import("../../pages/HomePage/Home"))
 const ContactsPage = lazy(() =>import("../../pages/Contacts"))
 const RegisterPage = lazy(() =>import("../../pages/Register"))
 const LoginPage = lazy(() =>import("../../pages/Login"))
