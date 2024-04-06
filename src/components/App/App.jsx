@@ -33,9 +33,10 @@ function App() {
   }, [dispatch]);
 
   return( 
-  <div className={css.container}>
+  <div>
     <Layout>
-   { isRefreshing ? <Loader/> : <div>
+      <main  className={css.container}>
+      { isRefreshing ? <Loader/> : <div>
       <Suspense fallback={<Loader/>}>
       <Routes>
         <Route index element={<HomePage/>}/>
@@ -49,6 +50,8 @@ function App() {
       {error && !loading && <ErrorMessage />}
       <Toaster />
       </div>}
+      </main>
+   
     </Layout>
   </div>)
     

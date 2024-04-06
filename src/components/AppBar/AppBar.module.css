@@ -1,8 +1,15 @@
 .header {
+  background-color: var(--background-transparent-color);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
+  align-items: baseline;
+  padding: 2em;
+
+}
+
+.logo{
+  display: flex;
+  gap: 8px;
 }
 
 .nav {
