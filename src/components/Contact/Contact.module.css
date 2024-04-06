@@ -1,25 +1,52 @@
 .wrapper {
   display: flex;
-  gap: 20px;
-  justify-content: left;
-  font-size: 20px;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.contactItem{
+  width: 140px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(3, auto); /* Три рядки */
+  background-color: var(--middle-green-color);
+  border: 1px solid var(--background-color);
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.editIcon {
+  height: 10px;
 }
 
 .btn {
-  transition: background-color 0.3s ease;
+  background-color: var(--background-transparent-color) ;
+  border: 1px solid var(--middle-green-color);
+  border-radius: 8px;
+  font-size: 10px;
+  padding: 4px 8px;
+  transition: all 250ms ease-in; 
+  animation: pulse 1.5s infinite alternate;
+  display: inline-block;
 }
+
 
 .btn:hover {
-  background-color: rgb(72, 67, 67);
+  background-color: var(--middle-green-color);
+  border: 1px solid var(--background-color);
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
+
+.avatar.avatar {
+  grid-row: 1 / span 2;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: var(--green-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 16px;
+  color: var(--background-color);
 }

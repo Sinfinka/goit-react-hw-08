@@ -1,39 +1,46 @@
-/* .form {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
+.form {
+    display: grid;
+    max-width: 320px;
+    background-color: var(--middle-green-color);
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .label {
+    display: flex;
+    flex-direction: row;
+  
+  }
 
-  width: 350px;
-  background-color: rgb(230, 230, 230);
-  border: 1px solid black;
-  border-radius: 8px;
-  box-shadow: 5px 5px 4px rgba(109, 109, 109, 0.5);
-  font-size: 36px;
-  text-shadow: none;
-  padding: 20px 20px 40px 20px;
-}
+  .input{
+    background-color: var(--background-color) ;
+    border: 1px solid var(--green-color);
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 12px;
+    outline: none;
+  }
 
-.field {
-  height: 40px;
-  font-size: 24px;
-  background-color: rgb(109, 109, 109, 0.5);
-  border-radius: 8px;
-  padding: 5px 10px;
-}
-.field::placeholder {
-  color: rgb(230, 230, 230);
-}
+  .input:hover, .input:focus, .input:active, .input:focus-visible {
+    border: 1px solid var(--light-green-color);
+  }
 
-.error {
-  height: 30px;
-  font-size: 18px;
-  color: chocolate;
-}
 
 .btn {
-  transition: background-color 0.3s ease;
-}
+  background-color: var(--background-transparent-color) ;
+  border: 1px solid var(--green-color);
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px 16px;
+  transition: background-color,  border 250ms ease-in; 
+  }
 
-.btn:hover {
-  background-color: rgb(72, 67, 67);
-} */
+  .btn:hover {
+      background-color: var(--middle-green-color);
+      border: 1px solid var(--background-color);
+    }
+    

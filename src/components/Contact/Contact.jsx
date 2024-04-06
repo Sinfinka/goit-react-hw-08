@@ -71,7 +71,7 @@ export default function Contact({ contact }) {
   const firstLetter = contact.name.charAt(0).toUpperCase();
 
   return (
-    <>
+    <div  className={css.contactItem}>
       <div className={css.avatar}>{firstLetter}</div>
 
       {isEditing ? (
@@ -113,7 +113,7 @@ export default function Contact({ contact }) {
           <CloseIcon onClick={handleClose} />
         </div>
       ) : (
-        <EditIcon onClick={handleEdit} />
+       <div className={css.editIcon}> <EditIcon  onClick={handleEdit} /></div> 
       )}
 
       <button className={css.btn} onClick={handleOpenModal}>
@@ -125,6 +125,6 @@ export default function Contact({ contact }) {
         modalIsOpen={modalIsOpen}
         onCloseModal={handleCloseModal}
       />
-    </>
+    </div>
   );
 }

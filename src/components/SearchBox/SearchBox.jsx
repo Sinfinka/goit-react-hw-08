@@ -10,12 +10,13 @@ export default function SearchBox() {
   const filterData = useSelector(selectNameFilter);
   return (
     <div className={css.wrapper}>
-      <p>Find contacts by name</p>
+      <p className={css.title}>Find contacts by name</p>
       <input
         className={css.input}
         type="text"
         value={filterData}
         onChange={(e) => dispatch(changeFilter(e.target.value))}
+        placeholder="Enter a name to search..."
       />
     </div>
   );

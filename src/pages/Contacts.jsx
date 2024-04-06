@@ -16,8 +16,8 @@ const ContactsPage = ()=> {
     }, [dispatch]);
 
     return( <>
-    <SearchBox/>
     <ContactForm/>
+    <SearchBox/>
     <ContactList/>
 
   

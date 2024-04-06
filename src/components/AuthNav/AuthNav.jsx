@@ -10,11 +10,11 @@ const addActiveClass = ({ isActive }) => {
 const AuthNav = ()=>{
 return(   <div className={css.logreg}>
     <NavLink className={addActiveClass} to="/login">
-      Login
+      Log In
     </NavLink>
    
    <NavLink className={addActiveClass} to="/register">
-      Register
+      Sign Up
     </NavLink>
    </div>)
 }

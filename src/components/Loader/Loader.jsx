@@ -9,7 +9,7 @@ const Loader = () => {
       ariaLabel="hourglass-loading"
       wrapperStyle={{}}
       wrapperClass=""
-      colors={["#306cce", "#72a1ed"]}
+      colors={["var(--green-color)", "var(--middle-green-color)" ]}
     />
   );
 };

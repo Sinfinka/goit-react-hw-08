@@ -46,9 +46,9 @@ function ContactForm() {
         validationSchema={SignupSchema}
       >
         <Form className={css.form}>
-          <label htmlFor={nameFieldId}>Name</label>
+          <label className={css.label} htmlFor={nameFieldId}>Name</label>
           <Field
-            className={css.field}
+            className={css.input} 
             type="text"
             name="name"
             id={nameFieldId}
@@ -58,9 +58,9 @@ function ContactForm() {
             <ErrorMessage name="name" component="span" />{" "}
           </span>
 
-          <label htmlFor={numberFieldId}>Number</label>
+          <label className={css.label} htmlFor={numberFieldId}>Number</label>
           <Field
-            className={css.field}
+         className={css.input} 
             type="text"
             name="number"
             id={numberFieldId}

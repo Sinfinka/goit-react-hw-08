@@ -1,6 +1,3 @@
-// import AppBar from "../AppBar/AppBar";
-// import Footer from "../Footer/Footer";
-
 import Layout from "../Layout/Layout";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
@@ -8,17 +5,17 @@ import { useEffect, lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux"; 
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
+import { refreshUser } from "../../redux/auth/operations";
 import { Toaster } from "react-hot-toast"; 
 import { Route, Routes } from "react-router-dom";
 import RestrictedRoute from "../RestrictedRoute";
-import { refreshUser } from "../../redux/auth/operations";
-import css from "./App.module.css";
 import PrivateRoute from "../PrivateRoute";
+import css from "./App.module.css";
 
 const HomePage = lazy(() =>import("../../pages/HomePage/Home"))
 const ContactsPage = lazy(() =>import("../../pages/Contacts"))
-const RegisterPage = lazy(() =>import("../../pages/Register"))
-const LoginPage = lazy(() =>import("../../pages/Login"))
+const RegisterPage = lazy(() =>import("../../pages/RegisterPage/Register"))
+const LoginPage = lazy(() =>import("../../pages/LoginPage/Login"))
 const NotFoundPage = lazy(() =>import("../../pages/NotFoundPage"))
 
 

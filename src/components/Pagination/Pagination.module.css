@@ -1,0 +1,23 @@
+.pagination{
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+padding: 8px;
+}
+
+
+
+.pageItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activePage{
+    width: 20px; 
+    height: 20px;
+    border: 1px solid var(--background-color);
+    background-color: var(--middle-green-color);
+    border-radius: 50%;
+}

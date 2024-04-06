@@ -1,18 +1,20 @@
-/* .wrapper {
-  text-align: center;
-  font-size: 24px;
-  padding-bottom: 20px;
-}
 
-p {
-  margin: 0 0 10px 0;
-}
-
-.input {
-  width: 340px;
-  height: 40px;
-  font-size: 24px;
-  background-color: rgb(109, 109, 109, 0.5);
+.title {
+  background-color: var(--middle-green-color);
+  border: 1px solid var(--background-color);
   border-radius: 8px;
-  padding: 5px 10px;
-} */
+  font-size: 18px;
+
+}
+
+.input{
+  background-color: var(--background-color) ;
+  border: 1px solid var(--green-color);
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px;
+  margin-top: -16px;
+  margin-bottom: 12px;
+  outline: none;
+  text-align: center;
+}
