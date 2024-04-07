@@ -16,7 +16,7 @@ const HomePage = lazy(() =>import("../../pages/HomePage/Home"))
 const ContactsPage = lazy(() =>import("../../pages/Contacts"))
 const RegisterPage = lazy(() =>import("../../pages/RegisterPage/Register"))
 const LoginPage = lazy(() =>import("../../pages/LoginPage/Login"))
-const NotFoundPage = lazy(() =>import("../../pages/NotFoundPage"))
+const NotFoundPage = lazy(() =>import("../../pages/NotFoundPage/NotFoundPage"))
 
 
 function App() {

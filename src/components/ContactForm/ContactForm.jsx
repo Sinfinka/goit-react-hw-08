@@ -27,7 +27,6 @@ function ContactForm() {
     dispatch(addContact(values))
       .unwrap()
       .then((value) => {
-        console.log(value);
         toast.success(`Contact ${value.name} was added`);
       })
       .catch(() => {

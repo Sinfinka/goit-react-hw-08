@@ -7,7 +7,7 @@
 .contactItem{
   width: 140px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3.5fr;
   grid-template-rows: repeat(3, auto); /* Три рядки */
   background-color: var(--middle-green-color);
   border: 1px solid var(--background-color);
@@ -16,8 +16,14 @@
   padding: 10px;
 }
 
-.editIcon {
-  height: 10px;
+.input{
+  width: 90px;
+  background-color: var(--background-color) ;
+  border: 1px solid var(--green-color);
+  border-radius: 8px;
+  font-size: 10px;
+  padding: 2px;
+  outline: none;
 }
 
 .btn {
@@ -25,7 +31,7 @@
   border: 1px solid var(--middle-green-color);
   border-radius: 8px;
   font-size: 10px;
-  padding: 4px 8px;
+  padding: 2px 4px;
   transition: all 250ms ease-in; 
   animation: pulse 1.5s infinite alternate;
   display: inline-block;
@@ -40,13 +46,17 @@
 
 .avatar.avatar {
   grid-row: 1 / span 2;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: var(--green-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 12px;
   color: var(--background-color);
+}
+
+.iconsDiv {
+  display: flex;
 }

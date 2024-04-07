@@ -12,7 +12,6 @@ import clsx from "clsx";
    const addActiveClass = (pageNumber) => {
      return clsx(css.pageItem, { [css.activePage]: pageNumber === currentPage });
    };
-   console.log(currentPage)
    return (
      <nav>
        <ul className={css.pagination}>

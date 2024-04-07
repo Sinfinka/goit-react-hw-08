@@ -76,6 +76,7 @@ export default function Contact({ contact }) {
 
       {isEditing ? (
         <input
+        className={css.input}
           type="text"
           value={name}
           onChange={handleSetName}
@@ -84,13 +85,16 @@ export default function Contact({ contact }) {
         />
       ) : (
         <div className={css.wrapper}>
-          <HiUser />
-          <div> {contact.name} </div>
-        </div>
+  <div>
+    {contact.name.length > 9 ? `${contact.name.slice(0, 9)}...` : contact.name}
+  </div>
+  <HiUser />
+</div>
       )}
 
       {isEditing ? (
         <input
+        className={css.input}
           type="text"
           value={number}
           onChange={handleSetNumber}
@@ -102,25 +106,26 @@ export default function Contact({ contact }) {
         />
       ) : (
         <div className={css.wrapper}>
-          <FaPhoneAlt />
           <div> {contact.number} </div>
+          <FaPhoneAlt />
         </div>
       )}
 
       {isEditing ? (
-        <div>
-          <DoneIcon onClick={handleSave} />
-          <CloseIcon onClick={handleClose} />
+        <div className={css.iconsDiv}>
+          <DoneIcon onClick={handleSave} style={{ width: '14px', height: '14px' }}/>
+          <CloseIcon onClick={handleClose} style={{ width: '14px', height: '14px' }}/>
         </div>
       ) : (
-       <div className={css.editIcon}> <EditIcon  onClick={handleEdit} /></div> 
+        <EditIcon className={css.editIcon} onClick={handleEdit} style={{ width: '14px', height: '14px' }} />
+
       )}
 
       <button className={css.btn} onClick={handleOpenModal}>
         Delete
       </button>
 
-      <DeleteModal
+      <DeleteModal 
         contact={contact}
         modalIsOpen={modalIsOpen}
         onCloseModal={handleCloseModal}

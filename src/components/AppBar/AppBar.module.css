@@ -2,14 +2,10 @@
   background-color: var(--background-transparent-color);
   display: flex;
   justify-content: space-between;
-  padding: 2em 2em  2em 2em ;
+  padding: 2em 2em  1em 2em ;
 
 }
 
-.logo{
-  display: flex;
-  gap: 8px;
-}
 
 .book {
   color: var(--green-color);
@@ -24,6 +20,8 @@
 }
 
 .logo {
+  display: flex;
+  gap: 8px;
   font-size: 16px;
   font-weight: 600;
   transition: color 150ms ease-in-out;

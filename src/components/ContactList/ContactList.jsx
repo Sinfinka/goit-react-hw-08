@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Contact from "../Contact/Contact";
 import css from "../ContactList/ContactList.module.css";
 import { selectFilteredContacts } from "../../redux/filters/selectors";
@@ -8,7 +8,8 @@ import Pagination from "../Pagination/Pagination"
 export default function ContactList() {
   const contacts = useSelector(selectFilteredContacts);
   const [currentPage, setCurrentPage] = useState(1);
-  const contactsPerPage = 6;
+  const [contactsPerPage, setContactsPerPage] = useState(6);
+
 
   const indexOfLastContact = currentPage * contactsPerPage;
   const indexOfFirstContact = indexOfLastContact - contactsPerPage;
@@ -16,9 +17,23 @@ export default function ContactList() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  console.log(currentPage);
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 720) {
+        setContactsPerPage(6);
+      } else {
+        setContactsPerPage(12);
+      }
+    }
+  
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setContactsPerPage]);
 
   return (
+    
     <div>
       <ul className={css.contactList}>
         {currentContacts.map((contact) => (
