@@ -1,6 +1,6 @@
-import RegistrationForm from "../../components/RegistrationForm/RegistrationForm"
+import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import { Link } from "react-router-dom";
-import css from "./Register.module.css"
+import css from "./Registration.module.css"
 
 const RegisterPage = ()=> {
     return(<>

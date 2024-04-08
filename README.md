@@ -19,7 +19,7 @@ Highlighting of the current page in the navigation menu. (The navigation menu hi
 - Adding new contacts with name and phone number.
 - Viewing a list of all contacts with the ability to edit and delete them.
 - Editing existing contacts with the ability to change the name and phone number. (Saving upon pressing the Enter key, exiting the contact editing mode upon pressing the Esc key)
-- Searching for contacts by name with automatic search results update.
+Search for contacts by name as well as by phone number with automatic updating of search results.
 - Deleting contacts with confirmation in a modal window.
 
 
@@ -43,5 +43,5 @@ Highlighting of the current page in the navigation menu. (The navigation menu hi
 - Додавання нових контактів з іменем та номером телефону.
 - Перегляд списку всіх контактів з можливістю редагування та видалення.
 - Редагування існуючих контактів з можливістю зміни імені та номера телефону. (Збереження при натисканні кнопки Enter, вихід з режиму редагування контакту при натисканні кнопки Esc)
-- Пошук контактів за іменем з автоматичним оновленням результатів пошуку.
+- Пошук контактів за іменем, а також за номером телефону з автоматичним оновленням результатів пошуку.
 - Видалення контактів з підтвердженням в модальному вікні.

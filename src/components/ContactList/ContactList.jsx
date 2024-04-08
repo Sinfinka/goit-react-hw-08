@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Contact from "../Contact/Contact";
 import css from "../ContactList/ContactList.module.css";
-import { selectFilteredContacts } from "../../redux/filters/selectors";
+import { selectFilteredContacts } from "../../redux/contacts/selectors";
 import Pagination from "../Pagination/Pagination"
 
 export default function ContactList() {

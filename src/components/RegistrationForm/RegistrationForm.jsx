@@ -24,15 +24,15 @@ const RegistrationForm = () => {
           <Form className={css.form} autoComplete="off">
             <label className={css.label}>
               Username
-              <Field className={css.input} type="text" name="name" placeHolder="User Name"/>
+              <Field className={css.input} type="text" name="name" placeholder="User Name"/>
             </label>
             <label className={css.label}>
               Email
-              <Field className={css.input} type="email" name="email" placeHolder="exemple@mail.com"/>
+              <Field className={css.input} type="email" name="email" placeholder="exemple@mail.com"/>
             </label>
             <label className={css.label}>
               Password
-              <Field className={css.input} type="password" name="password" placeHolder="Password"/>
+              <Field className={css.input} type="password" name="password" placeholder="Password"/>
             </label>
             <button className={css.btn} type="submit">Register</button>
           </Form>

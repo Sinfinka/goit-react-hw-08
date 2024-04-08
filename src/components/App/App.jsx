@@ -12,10 +12,10 @@ import RestrictedRoute from "../RestrictedRoute";
 import PrivateRoute from "../PrivateRoute";
 import css from "./App.module.css";
 
-const HomePage = lazy(() =>import("../../pages/HomePage/Home"))
+const HomePage = lazy(() =>import("../../pages/Home"))
 const ContactsPage = lazy(() =>import("../../pages/Contacts"))
-const RegisterPage = lazy(() =>import("../../pages/RegisterPage/Register"))
-const LoginPage = lazy(() =>import("../../pages/LoginPage/Login"))
+const RegisterPage = lazy(() =>import("../../pages/Registration"))
+const LoginPage = lazy(() =>import("../../pages/Login"))
 const NotFoundPage = lazy(() =>import("../../pages/NotFoundPage/NotFoundPage"))
 
 
